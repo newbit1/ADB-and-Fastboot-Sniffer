@@ -13,13 +13,14 @@ an ADB or Fastboot application sends to your device.
 * Write operations are not tested yet
 
 ## How it works
-* rename the au3 file to the name of your target application, ie. adb.au3 or fastboot.au3
+* the name of the au3 file doesn't matter
 * compile the au3 file to an executable file with AutoIt V3
-* rename your target application, ie. `adb_old.exe` or `fastboot_old.exe`
-	* copy the au3 file executable right next to it
+* rename the compiled executable to your target applications name ie. `adb.exe` or `fastboot.exe` or `sideload.exe`
+* and rename your target application to, ie. `adb_old.exe` or `fastboot_old.exe` or `sideload_old.exe`
+	* copy the compiled executable right next to it
 * perform your operations of your target application as usually
 	* a log .txt file will be created and all the commands are logged into it
-		* ie. `adbsniff.txt` or `fastbootsniff.txt`
+		* ie. `adbsniff.txt` or `fastbootsniff.txt` or `sideloadsniff.txt`
 * open the log file, and read your sniffed content
 
 ### Background
@@ -29,6 +30,8 @@ sending something back, the compiled au3 file executable captures it, and tees\
 it in a logfile and a real file if it was a pull.
 
 ### Change Logs
+#### [May 2023]
+* [General] - changed to independent file names
 #### [April 2023]
 * [General] - published initial version
 

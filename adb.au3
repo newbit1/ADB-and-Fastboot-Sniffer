@@ -2,22 +2,32 @@
 #include <Constants.au3>
 #AutoIt3Wrapper_Change2CUI=y
 #include <MsgBoxConstants.au3>
+local $DEBUG = False
+;$DEBUG = True
 ; This displays mesage box with the parameterized text
 $args = $CmdLineRaw
 ;MsgBox($MB_SYSTEMMODAL, "ADB Hack!", $args)
 
-if StringCompare ( @ScriptName, "adb.exe") = 0 Then
-	Local $sTargetFile = @ScriptDir & '\adbsniff.txt'
-	Local $cmd_old = "adb_old.exe"
-ElseIf StringCompare ( @ScriptName, "fastboot.exe") = 0 Then
-	Local $sTargetFile = @ScriptDir & '\fastbootsniff.txt'
-	Local $cmd_old = "fastboot_old.exe"
-Else
-	; Display Help Text here
-	ConsoleWrite("Rename your Sniff Target to _old.exe")
+local $FileName = StringSplit(@ScriptName, ".exe", 1)
+if $DEBUG Then
+	$FileName = StringSplit(@ScriptName, ".au3", 1)
+EndIf
+
+$FileName = $FileName[1]
+Local $sTargetFile = @ScriptDir & '\' & $FileName & 'sniff.txt'
+Local $cmd_old = $FileName & '_old.exe'
+Local Const $cmd = @ScriptName
+
+if $DEBUG Then
+	ConsoleWrite("$cmd=" & $cmd & @CRLF)
+	ConsoleWrite("$cmd_old=" & $cmd_old & @CRLF)
+	ConsoleWrite("$sTargetFile=" & $sTargetFile & @CRLF)
+EndIf
+
+If Not FileExists($cmd_old) Then
+	ConsoleWrite("Rename your Sniff Target to " & $cmd_old & @CRLF)
 	Exit
 EndIf
-Local Const $cmd = @ScriptName
 
 _WriteDataToLogFile($sTargetFile,$cmd & " " & $args & @CRLF)
 
