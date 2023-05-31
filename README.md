@@ -29,6 +29,10 @@ it to a logfile. The same happens the other way around, when the original file i
 sending something back, the compiled au3 file executable captures it, and tees\
 it in a logfile and a real file if it was a pull.
 
+### How To Install AutoIT V3
+* Download and install [AutoIt Full Installation](https://www.autoitscript.com/site/autoit/downloads/)
+* Download and install [SciTE4AutoIt3.exe](https://www.autoitscript.com/site/autoit-script-editor/downloads/)
+
 ### Change Logs
 #### [May 2023]
 * [General] - changed to independent file names
