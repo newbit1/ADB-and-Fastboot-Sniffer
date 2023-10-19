@@ -1,4 +1,7 @@
-# ADB and Fastboot Sniffer
+# This Repo will be archived at the 24th of Oct 2023
+# Due to the forced 2FA Mumbo Jumbo from GitHub,
+# this Repo has moved to GitLab
+# [ADB and Fastboot Sniffer](https://gitlab.com/newbit/ADB-and-Fastboot-Sniffer)
 ### [NewBit @ xda-developers](https://forum.xda-developers.com/m/newbit.1350876)
 
 ### Description
